@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Pizza!</string>
+    <string name="app_name">Pizza</string>
+<string name="main_title">Pizza</string>
+<string name="get_started_label">Get Started!</string>
+<string name="new_pizza_label">Add New Pizza</string>
+<string name="edit_order_label">Edit Order</string>
+<string name="checkout_label">Checkout</string>
+<string name="order_title">Order Summary</string>
+</resources>
