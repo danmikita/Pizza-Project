@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Pizza!</string>
-    <string name="app_name">Pizza</string>
+<string name="hello">Hello World, Pizza!</string>
+<string name="app_name">Pizza</string>
 <string name="main_title">Pizza</string>
 <string name="get_started_label">Get Started!</string>
 <string name="new_pizza_label">Add New Pizza</string>
 <string name="edit_order_label">Edit Order</string>
 <string name="checkout_label">Checkout</string>
 <string name="order_title">Order Summary</string>
+
+<string name="pizza_size">Pizza Size</string>
+<string name="small_label">Small</string>
+<string name="medium_label">Medium</string>
+<string name="large_label">Large</string>
+<string name="party_label">Party</string>
+<string name="crust_selection">Crust Selection</string>
+<string name="thin_label">Thin</string>
+<string name="thick_label">Thick</string>
+<string name="deepdish_label">Deep Dish</string>
+<string name="stuffed_label">Stuffed Crust</string>
+<string name="half_whole_label">Layout</string>
+<string name="half_label">Half and Half</string>
+<string name="whole_label">Whole</string>
 </resources>
