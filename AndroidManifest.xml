@@ -14,7 +14,10 @@
         <activity android:name=".OrderPage"
         	android:label="@string/order_title" >
         </activity>
-
+		<activity android:name=".HowTo"
+			android:label="@string/how_to_title"
+			android:theme="@android:style/Theme.Dialog">
+		</activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
 

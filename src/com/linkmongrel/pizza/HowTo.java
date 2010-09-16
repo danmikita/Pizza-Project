@@ -3,11 +3,11 @@ package com.linkmongrel.pizza;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class SpecialInstructions extends Activity{
+public class HowTo extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.order_page);
+		setContentView(R.layout.how_to);
 	}
 
 }

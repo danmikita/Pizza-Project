@@ -3,6 +3,7 @@ package com.linkmongrel.pizza;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +23,8 @@ public class OrderPage extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.new_pizza_button:
+			Intent intent = new Intent(this, HowTo.class);
+			startActivity(intent);
 			openSizeSelectionDialog();
 			break;
 		// More buttons go here (if any) ...
@@ -63,9 +66,14 @@ public class OrderPage extends Activity implements OnClickListener{
 		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			
+			startPizzaCreation();
 		}
 	}).show();
 		
+	}
+
+	protected void startPizzaCreation() {
+		Intent intent = new Intent(OrderPage.this, Pizza.class);
+		startActivity(intent);
 	}
 }
