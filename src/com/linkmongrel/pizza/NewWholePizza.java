@@ -6,34 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 
-public class NewWholePizza extends Activity implements OnClickListener{
-	
+public class NewWholePizza extends Activity implements OnClickListener {
+
 	private static final int PEPPERONI = 0;
-
-
-
 	private static final int ONION = 1;
-
-
-
 	private static final int PEPPERS = 2;
-
-
-
 	private static final int SAUSAGE = 3;
-
-
-
 	private static final int MUSHROOM = 4;
-
-
-
 	private static final int EXTRA_CHEESE = 5;
-	
-	
-	
+
 	private ImageView pizzaImage;
 	private ImageView onionImage;
 	private ImageView pepperoniImage;
@@ -45,32 +30,38 @@ public class NewWholePizza extends Activity implements OnClickListener{
 	private CheckBox sausageBox;
 	private CheckBox cheeseBox;
 	private CheckBox mushroomBox;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.new_pizza);
-		
+
 		// Initialize pizza images.
 		pizzaImage = (ImageView) findViewById(R.id.pizza_image);
 		onionImage = (ImageView) findViewById(R.id.onion_image);
 		pepperoniImage = (ImageView) findViewById(R.id.pepperoni_image);
 		peppersImage = (ImageView) findViewById(R.id.peppers_image);
 		sausageImage = (ImageView) findViewById(R.id.sausage_image);
-		
-		onionImage.setVisibility(0);
-		pepperoniImage.setVisibility(0);
-		peppersImage.setVisibility(0);
-		sausageImage.setVisibility(0);
-		
+
+		onionImage.setVisibility(View.INVISIBLE);
+		pepperoniImage.setVisibility(View.INVISIBLE);
+		peppersImage.setVisibility(View.INVISIBLE);
+		sausageImage.setVisibility(View.INVISIBLE);
+
 		// Initialize checkboxes.
 		pepperoniBox = (CheckBox) findViewById(R.id.pepperoni_checkbox);
+		pepperoniBox.setOnClickListener(this);
 		onionBox = (CheckBox) findViewById(R.id.onion_checkbox);
+		onionBox.setOnClickListener(this);
 		peppersBox = (CheckBox) findViewById(R.id.peppers_checkbox);
+		peppersBox.setOnClickListener(this);
 		sausageBox = (CheckBox) findViewById(R.id.sausage_checkbox);
+		sausageBox.setOnClickListener(this);
 		mushroomBox = (CheckBox) findViewById(R.id.mushroom_checkbox);
+		mushroomBox.setOnClickListener(this);
 		cheeseBox = (CheckBox) findViewById(R.id.extra_cheese_checkbox);
-		
+		cheeseBox.setOnClickListener(this);
+
 		View getAddToCartButton = findViewById(R.id.add_to_cart_button);
 		getAddToCartButton.setOnClickListener(this);
 	}
@@ -103,42 +94,42 @@ public class NewWholePizza extends Activity implements OnClickListener{
 			break;
 		// More buttons go here (if any) ...
 		}
-		
+
 	}
 
 	private void displayImage(int topping) {
-		switch(topping) {
+		switch (topping) {
 		case PEPPERONI:
-			if(pepperoniBox.isChecked()) {
-				pepperoniImage.setVisibility(1);
+			if (pepperoniBox.isChecked()) {
+				pepperoniImage.setVisibility(View.VISIBLE);
 			} else {
-				pepperoniImage.setVisibility(0);
+				pepperoniImage.setVisibility(View.INVISIBLE);
 			}
 		case ONION:
-			if(pepperoniBox.isChecked()) {
-				onionImage.setVisibility(1);
+			if (onionBox.isChecked()) {
+				onionImage.setVisibility(View.VISIBLE);
 			} else {
-				onionImage.setVisibility(0);
+				onionImage.setVisibility(View.INVISIBLE);
 			}
 		case PEPPERS:
-			if(pepperoniBox.isChecked()) {
-				peppersImage.setVisibility(1);
+			if (peppersBox.isChecked()) {
+				peppersImage.setVisibility(View.VISIBLE);
 			} else {
-				peppersImage.setVisibility(0);
+				peppersImage.setVisibility(View.INVISIBLE);
 			}
 		case SAUSAGE:
-			if(pepperoniBox.isChecked()) {
-				sausageImage.setVisibility(1);
+			if (sausageBox.isChecked()) {
+				sausageImage.setVisibility(View.VISIBLE);
 			} else {
-				sausageImage.setVisibility(0);
+				sausageImage.setVisibility(View.INVISIBLE);
 			}
 		}
-		
+
 	}
 
 	private void addToCart() {
 		// TODO Add an insert statement for the SQLite database.
-		
+
 	}
 
 }
