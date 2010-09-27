@@ -23,12 +23,25 @@ public class OrderPage extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.new_pizza_button:
-			Intent intent = new Intent(this, HowTo.class);
-			startActivity(intent);
-			openSizeSelectionDialog();
+			openHowToDialog();
+			
 			break;
 		// More buttons go here (if any) ...
 		}
+	}
+	
+	private void openHowToDialog() { 
+		new AlertDialog.Builder(this)
+			.setTitle(R.string.how_to_title)
+			.setMessage(R.string.how_to_text).setCancelable(false)
+			.setNeutralButton("OK", 
+			new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				openSizeSelectionDialog();
+			}
+		}).show();
 	}
 
 	private void openSizeSelectionDialog() {
@@ -73,7 +86,7 @@ public class OrderPage extends Activity implements OnClickListener{
 	}
 
 	protected void startPizzaCreation() {
-		Intent intent = new Intent(OrderPage.this, Pizza.class);
+		Intent intent = new Intent(OrderPage.this, NewWholePizza.class);
 		startActivity(intent);
 	}
 }

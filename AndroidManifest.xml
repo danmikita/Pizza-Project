@@ -14,6 +14,9 @@
         <activity android:name=".OrderPage"
         	android:label="@string/order_title" >
         </activity>
+        <activity android:name=".NewWholePizza"
+        	android:label="@string/new_whole_pizza_title" >
+        </activity>
 		<activity android:name=".HowTo"
 			android:label="@string/how_to_title"
 			android:theme="@android:style/Theme.Dialog">

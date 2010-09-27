@@ -8,6 +8,7 @@
 <string name="edit_order_label">Edit Order</string>
 <string name="checkout_label">Checkout</string>
 <string name="order_title">Order Summary</string>
+<string name="new_whole_pizza_title">New Pizza Construction</string>
 <string name="how_to_title">How To Order</string>
 <string name="how_to_text">To order a fantastic pizza using 
 our mobile Android app you can follow these simple instructions.
@@ -30,4 +31,13 @@ our mobile Android app you can follow these simple instructions.
 <string name="half_whole_label">Layout</string>
 <string name="half_label">Half and Half</string>
 <string name="whole_label">Whole</string>
+<string name="pepperoni_checkbox">Pepperoni</string>
+<string name="sausage_checkbox">Sausage</string>
+<string name="peppers_checkbox">Peppers</string>
+<string name="onion_checkbox">Onion</string>
+<string name="extra_cheese_checkbox">Extra Cheese</string>
+<string name="mushroom_checkbox">Mushroom</string>
+<string name="add_to_cart_label">Add To Cart</string>
+<string name="enter_name_text">Please enter your name before placing an order.</string>
+<string name="incomplete_title">Incomplete Information</string>
 </resources>

@@ -21,42 +21,69 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int icon=0x7f020001;
+        public static final int onion=0x7f020002;
+        public static final int pepperoni=0x7f020003;
+        public static final int peppers=0x7f020004;
+        public static final int pizza=0x7f020005;
+        public static final int sausage=0x7f020006;
     }
     public static final class id {
         public static final int about_content=0x7f070000;
-        public static final int checkout_button=0x7f070004;
-        public static final int edit_order_button=0x7f070003;
-        public static final int get_started_button=0x7f070001;
-        public static final int new_pizza_button=0x7f070002;
+        public static final int add_to_cart_button=0x7f07000b;
+        public static final int checkout_button=0x7f07000f;
+        public static final int edit_order_button=0x7f07000e;
+        public static final int extra_cheese_checkbox=0x7f070009;
+        public static final int get_name=0x7f070002;
+        public static final int get_started_button=0x7f070003;
+        public static final int list=0x7f07000c;
+        public static final int mushroom_checkbox=0x7f07000a;
+        public static final int new_pizza_button=0x7f07000d;
+        public static final int onion_checkbox=0x7f070008;
+        public static final int pepperoni_checkbox=0x7f070005;
+        public static final int peppers_checkbox=0x7f070007;
+        public static final int pizza_image=0x7f070004;
+        public static final int sausage_checkbox=0x7f070006;
+        public static final int show_again_checkbox=0x7f070001;
     }
     public static final class layout {
         public static final int how_to=0x7f030000;
         public static final int main=0x7f030001;
-        public static final int order_page=0x7f030002;
+        public static final int new_pizza=0x7f030002;
+        public static final int order_page=0x7f030003;
     }
     public static final class string {
+        public static final int add_to_cart_label=0x7f06001e;
         public static final int app_name=0x7f060001;
         public static final int checkout_label=0x7f060006;
-        public static final int crust_selection=0x7f06000f;
-        public static final int deepdish_label=0x7f060012;
+        public static final int crust_selection=0x7f060010;
+        public static final int deepdish_label=0x7f060013;
         public static final int edit_order_label=0x7f060005;
+        public static final int enter_name_text=0x7f06001f;
+        public static final int extra_cheese_checkbox=0x7f06001c;
         public static final int get_started_label=0x7f060003;
-        public static final int half_label=0x7f060015;
-        public static final int half_whole_label=0x7f060014;
+        public static final int half_label=0x7f060016;
+        public static final int half_whole_label=0x7f060015;
         public static final int hello=0x7f060000;
-        public static final int how_to_text=0x7f060009;
-        public static final int how_to_title=0x7f060008;
-        public static final int large_label=0x7f06000d;
+        public static final int how_to_text=0x7f06000a;
+        public static final int how_to_title=0x7f060009;
+        public static final int incomplete_title=0x7f060020;
+        public static final int large_label=0x7f06000e;
         public static final int main_title=0x7f060002;
-        public static final int medium_label=0x7f06000c;
+        public static final int medium_label=0x7f06000d;
+        public static final int mushroom_checkbox=0x7f06001d;
         public static final int new_pizza_label=0x7f060004;
+        public static final int new_whole_pizza_title=0x7f060008;
+        public static final int onion_checkbox=0x7f06001b;
         public static final int order_title=0x7f060007;
-        public static final int party_label=0x7f06000e;
-        public static final int pizza_size=0x7f06000a;
-        public static final int small_label=0x7f06000b;
-        public static final int stuffed_label=0x7f060013;
-        public static final int thick_label=0x7f060011;
-        public static final int thin_label=0x7f060010;
-        public static final int whole_label=0x7f060016;
+        public static final int party_label=0x7f06000f;
+        public static final int pepperoni_checkbox=0x7f060018;
+        public static final int peppers_checkbox=0x7f06001a;
+        public static final int pizza_size=0x7f06000b;
+        public static final int sausage_checkbox=0x7f060019;
+        public static final int small_label=0x7f06000c;
+        public static final int stuffed_label=0x7f060014;
+        public static final int thick_label=0x7f060012;
+        public static final int thin_label=0x7f060011;
+        public static final int whole_label=0x7f060017;
     }
 }

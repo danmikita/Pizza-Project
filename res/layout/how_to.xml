@@ -9,4 +9,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/how_to_text" />
+		<CheckBox android:id="@+id/show_again_checkbox"
+ 			android:text="Plain"
+ 			android:layout_width="wrap_content"
+ 			android:layout_height="wrap_content" />
 </ScrollView>
