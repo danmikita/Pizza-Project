@@ -5,18 +5,52 @@
 	android:orientation="vertical"
 	android:background="@color/background"
 	xmlns:android="http://schemas.android.com/apk/res/android">
-	<LinearLayout
+	<RelativeLayout
+		android:orientation="vertical"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:orientation="vertical">
-	</LinearLayout>
-	<ImageView
-		android:id="@+id/pizza_image"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:layout_marginTop="30dip"
-		android:src="@drawable/pizza" />
+		android:gravity="center">
+		<ImageView
+			android:id="@+id/pizza_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:layout_marginLeft="85dip"
+			android:src="@drawable/pizza" />
+		<ImageView
+			android:id="@+id/onion_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:layout_marginLeft="85dip"
+			android:src="@drawable/onion" />
+		<ImageView
+			android:id="@+id/pepperoni_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:layout_marginLeft="85dip"
+			android:src="@drawable/pepperoni" />
+		<ImageView
+			android:id="@+id/peppers_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:layout_marginLeft="85dip"
+			android:src="@drawable/peppers" />
+		<ImageView
+			android:id="@+id/sausage_image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:layout_marginLeft="85dip"
+			android:src="@drawable/sausage" />
+	</RelativeLayout>
 	<TableLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
