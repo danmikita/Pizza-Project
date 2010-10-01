@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 
-public class NewWholePizza extends Activity implements OnClickListener {
+public class RightHalfPizza extends Activity implements OnClickListener {
 
 	private static final int PEPPERONI = 0;
 	private static final int ONION = 1;
@@ -36,7 +34,7 @@ public class NewWholePizza extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.new_pizza);
+		setContentView(R.layout.right_half);
 
 		// Initialize pizza images.
 		pizzaImage = (ImageView) findViewById(R.id.pizza_image);
@@ -70,6 +68,8 @@ public class NewWholePizza extends Activity implements OnClickListener {
 
 		View getAddToCartButton = findViewById(R.id.add_to_cart_button);
 		getAddToCartButton.setOnClickListener(this);
+		View goToLeftSideButton = findViewById(R.id.left_half_button);
+		goToLeftSideButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -77,6 +77,9 @@ public class NewWholePizza extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.add_to_cart_button:
 			addToCart();
+			finish();
+			break;
+		case R.id.left_half_button:
 			finish();
 			break;
 		case R.id.pepperoni_checkbox:

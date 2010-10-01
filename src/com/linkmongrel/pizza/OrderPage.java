@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class OrderPage extends Activity implements OnClickListener{
+	
+	private boolean hasShown = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,8 +26,12 @@ public class OrderPage extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.new_pizza_button:
-			openHowToDialog();
-			
+			if(!hasShown) {
+				openHowToDialog();
+				hasShown = true;
+			} else {
+				openSizeSelectionDialog();
+			}
 			break;
 		// More buttons go here (if any) ...
 		}
@@ -79,13 +86,21 @@ public class OrderPage extends Activity implements OnClickListener{
 		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			startPizzaCreation();
+			if(which == 0)
+				startHalfPizzaCreation();
+			else
+				startWholePizzaCreation();
 		}
 	}).show();
 		
 	}
 
-	protected void startPizzaCreation() {
+	protected void startHalfPizzaCreation() {
+		Intent intent = new Intent(OrderPage.this, LeftHalfPizza.class);
+		startActivity(intent);
+	}
+
+	protected void startWholePizzaCreation() {
 		Intent intent = new Intent(OrderPage.this, NewWholePizza.class);
 		startActivity(intent);
 	}

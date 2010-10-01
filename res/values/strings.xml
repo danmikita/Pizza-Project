@@ -40,4 +40,6 @@ our mobile Android app you can follow these simple instructions.
 <string name="add_to_cart_label">Add To Cart</string>
 <string name="enter_name_text">Please enter your name before placing an order.</string>
 <string name="incomplete_title">Incomplete Information</string>
+<string name="right_half_label">Go To Right Half</string>
+<string name="left_half_label">Go To Left Half</string>
 </resources>

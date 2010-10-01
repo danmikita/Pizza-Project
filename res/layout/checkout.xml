@@ -27,6 +27,7 @@
 			android:layout_marginRight="50dip"
 			android:layout_marginLeft="50dip"
 			android:hint="Enter your name"
+			android:singleLine="true"
 			android:gravity="center"
 			android:textSize="18sp" />
     	<Button
