@@ -20,6 +20,10 @@ public class OrderPage extends Activity implements OnClickListener{
 		// Set up click listeners for all the buttons
         View getNewPizzaButton = findViewById(R.id.new_pizza_button);
         getNewPizzaButton.setOnClickListener(this);
+        View getEditOrderButton = findViewById(R.id.edit_order_button);
+        getEditOrderButton.setOnClickListener(this);
+        View getCheckoutButton = findViewById(R.id.checkout_button);
+        getCheckoutButton.setOnClickListener(this);
 	}
 	
 	@Override
@@ -32,6 +36,11 @@ public class OrderPage extends Activity implements OnClickListener{
 			} else {
 				openSizeSelectionDialog();
 			}
+			break;
+		case R.id.edit_order_button:
+			break;
+		case R.id.checkout_button:
+			checkOutDialog();
 			break;
 		// More buttons go here (if any) ...
 		}
@@ -103,5 +112,19 @@ public class OrderPage extends Activity implements OnClickListener{
 	protected void startWholePizzaCreation() {
 		Intent intent = new Intent(OrderPage.this, NewWholePizza.class);
 		startActivity(intent);
+	}
+	
+	private void checkOutDialog() { 
+		new AlertDialog.Builder(this)
+			.setTitle(R.string.checkout_title)
+			.setMessage(R.string.checkout_text).setCancelable(false)
+			.setNeutralButton("OK", 
+			new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+			}
+		}).show();
 	}
 }

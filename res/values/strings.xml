@@ -42,4 +42,8 @@ our mobile Android app you can follow these simple instructions.
 <string name="incomplete_title">Incomplete Information</string>
 <string name="right_half_label">Go To Right Half</string>
 <string name="left_half_label">Go To Left Half</string>
+<string name="right_label">Right Half</string>
+<string name="left_label">Left Half</string>
+<string name="checkout_text">Your pizza will be ready for pick up in 15 minutes.</string>
+<string name="checkout_title">Thank you for your order!</string>
 </resources>
