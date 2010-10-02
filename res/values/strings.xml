@@ -10,14 +10,9 @@
 <string name="order_title">Order Summary</string>
 <string name="new_whole_pizza_title">New Pizza Construction</string>
 <string name="how_to_title">How To Order</string>
-<string name="how_to_text">To order a fantastic pizza using 
-our mobile Android app you can follow these simple instructions.
- Following this message you will be given the option of your pizza
- size followed immediately by a choice of your favorite crust options.
-  After selecting your crust, you will taken to your topping selection screen,
-  where you will be required to choose the topping you would like on your pizza. 
-  here you will have the option to select which side of the pizza you would like
-   your toppings to be on.</string>
+<string name="how_to_text">Following this message you will be given the option of your pizza
+ size, crust, and layout.  After selecting your layout, you will be taken to the topping selection 
+ screen. When finished select the "Add To Cart" button.</string>
 <string name="pizza_size">Pizza Size</string>
 <string name="small_label">Small</string>
 <string name="medium_label">Medium</string>

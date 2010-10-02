@@ -65,8 +65,6 @@ public class RightHalfPizza extends Activity implements OnClickListener {
 		cheeseBox = (CheckBox) findViewById(R.id.extra_cheese_checkbox);
 		cheeseBox.setOnClickListener(this);
 
-		View getAddToCartButton = findViewById(R.id.add_to_cart_button);
-		getAddToCartButton.setOnClickListener(this);
 		View goToLeftSideButton = findViewById(R.id.left_half_button);
 		goToLeftSideButton.setOnClickListener(this);
 	}
@@ -74,10 +72,6 @@ public class RightHalfPizza extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.add_to_cart_button:
-			addToCart();
-			finish();
-			break;
 		case R.id.left_half_button:
 			finish();
 			break;
@@ -147,10 +141,4 @@ public class RightHalfPizza extends Activity implements OnClickListener {
 		}
 
 	}
-
-	private void addToCart() {
-		// TODO Add an insert statement for the SQLite database.
-
-	}
-
 }
