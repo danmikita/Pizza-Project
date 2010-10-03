@@ -1,13 +1,10 @@
 package com.linkmongrel.pizza;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 
 public class NewWholePizza extends Activity implements OnClickListener {
@@ -147,7 +144,7 @@ public class NewWholePizza extends Activity implements OnClickListener {
 	}
 
 	private void addToCart() {
-		// TODO Add an insert statement for the SQLite database.
+		
 
 	}
 
