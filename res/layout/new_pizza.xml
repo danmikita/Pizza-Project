@@ -5,126 +5,43 @@
 	android:orientation="vertical"
 	android:background="@color/background"
 	xmlns:android="http://schemas.android.com/apk/res/android">
-	<RelativeLayout
-		android:orientation="vertical"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:gravity="center">
-		<ImageView
-			android:id="@+id/pizza_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/pizza" />
-		<ImageView
-			android:id="@+id/extracheese_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/extracheese" />
-		<ImageView
-			android:id="@+id/onion_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/onion" />
-		<ImageView
-			android:id="@+id/pepperoni_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/pepperoni" />
-		<ImageView
-			android:id="@+id/peppers_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/peppers" />
-		<ImageView
-			android:id="@+id/sausage_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/sausage" />
-		<ImageView
-			android:id="@+id/mushrooms_image"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="30dip"
-			android:layout_marginLeft="85dip"
-			android:src="@drawable/mushrooms" />
-	</RelativeLayout>
-	<TableLayout
-		android:layout_width="wrap_content"
+	<Gallery
+		android:id="@+id/gallery"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+	<RadioGroup
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:stretchColumns="0"
-		android:layout_marginBottom="70dip">
-	</TableLayout>
-	<TableRow
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-		<CheckBox
-			android:id="@+id/pepperoni_checkbox"
+		android:id="@+id/radiogroup">
+		<RadioButton
+			android:checked="false"
+			android:id="@+id/whole"
+			android:text="Whole" />
+		<TextView
+			android:id="@+id/whole_text"
+			android:text="@string/main_title"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/pepperoni_checkbox" />
-		<CheckBox
-			android:id="@+id/sausage_checkbox"
+			android:layout_height="wrap_content" />
+		<RadioButton
+			android:checked="false"
+			android:id="@+id/left"
+			android:text="Left Half" />
+		<TextView
+			android:id="@+id/left_text"
+			android:text="@string/main_title"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/sausage_checkbox" />
-	</TableRow>
-	<TableRow
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-		<CheckBox
-			android:id="@+id/peppers_checkbox"
+			android:layout_height="wrap_content" />
+		<RadioButton
+			android:checked="false"
+			android:id="@+id/right"
+			android:text="Right Half" />
+		<TextView
+			android:id="@+id/right_text"
+			android:text="@string/main_title"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/peppers_checkbox" />
-		<CheckBox
-			android:id="@+id/onion_checkbox"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/onion_checkbox" />
-	</TableRow>
-	<TableRow
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-		<CheckBox
-			android:id="@+id/extra_cheese_checkbox"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/extra_cheese_checkbox" />
-		<CheckBox
-			android:id="@+id/mushroom_checkbox"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:width="200px"
-			android:text="@string/mushroom_checkbox" />
-	</TableRow>
+			android:layout_height="wrap_content" />
+	</RadioGroup>
 	<Button
 		android:id="@+id/add_to_cart_button"
 		android:layout_width="fill_parent"
