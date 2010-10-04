@@ -6,32 +6,31 @@
    android:orientation="horizontal"
    android:padding="10sp">
    <TextView
-      android:id="@+id/rowid"
+      android:id="@+id/sizecolon"
+      android:text="Size: "
       android:layout_width="wrap_content" 
       android:layout_height="wrap_content" /> 
    <TextView
-      android:id="@+id/rowidcolon"
+      android:id="@+id/size"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text=": "
-      android:layout_toRightOf="@id/rowid" />
+      android:layout_toRightOf="@id/sizecolon" />
    <TextView
-      android:id="@+id/time"
+      android:id="@+id/crustcolon"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_toRightOf="@id/rowidcolon" />
+      android:text="   Crust: "
+      android:layout_toRightOf="@id/size" />
    <TextView
-      android:id="@+id/timecolon"
+      android:id="@+id/crust"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text=": "
-      android:layout_toRightOf="@id/time" />
+      android:layout_toRightOf="@id/crustcolon" />
    <TextView
-      android:id="@+id/title"
+      android:id="@+id/toppings"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:ellipsize="end"
-      android:singleLine="true"
       android:textStyle="italic"
-      android:layout_toRightOf="@id/timecolon" />
+      android:layout_below="@id/crust" />
 </RelativeLayout>

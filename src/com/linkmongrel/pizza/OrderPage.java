@@ -1,10 +1,8 @@
 package com.linkmongrel.pizza;
 
-import static android.provider.BaseColumns._ID;
-import static com.linkmongrel.pizza.Constants.TABLE_NAME;
-import static com.linkmongrel.pizza.Constants.SIZE;
 import static com.linkmongrel.pizza.Constants.CRUST;
-import static com.linkmongrel.pizza.Constants.LAYOUT;
+import static com.linkmongrel.pizza.Constants.SIZE;
+import static com.linkmongrel.pizza.Constants.TABLE_NAME;
 import static com.linkmongrel.pizza.Constants.TOPPINGS;
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -28,7 +26,6 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		setContentView(R.layout.order_page);
 		data = new PizzaData(this);
 		try{
-			addEvent("Large", "Thin", 0, "Pepperoni, Peppers, Mushrooms");
 			Cursor cursor = getEvents();
 			showEvents(cursor);
 		} finally {
@@ -41,6 +38,17 @@ public class OrderPage extends ListActivity implements OnClickListener{
         getEditOrderButton.setOnClickListener(this);
         View getCheckoutButton = findViewById(R.id.checkout_button);
         getCheckoutButton.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		try{
+			Cursor cursor = getEvents();
+			showEvents(cursor);
+		} finally {
+			data.close();
+		}
 	}
 	
 	@Override
@@ -94,12 +102,12 @@ public class OrderPage extends ListActivity implements OnClickListener{
 					size = "Large";
 				else
 					size = "Party";
-				openCrustSelectionDialog();
+				openCrustSelectionDialog(size);
 			}
 		}).show();
 	}
 
-	protected void openCrustSelectionDialog() {
+	protected void openCrustSelectionDialog(final String size) {
 		new AlertDialog.Builder(this)
 		.setTitle(R.string.crust_selection)
 		.setItems(R.array.pizza_crust, 
@@ -107,37 +115,24 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			
-			openLayoutSelectionDialog();
-		}
-	}).show();
-		
-	}
-
-	protected void openLayoutSelectionDialog() {
-		new AlertDialog.Builder(this)
-		.setTitle(R.string.half_whole_label)
-		.setItems(R.array.pizza_layout, 
-		new DialogInterface.OnClickListener() {
-		
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
+			String crust;
 			if(which == 0)
-				startHalfPizzaCreation();
+				crust = "Thin";
+			else if(which == 1)
+				crust = "Thick";
+			else if(which == 2)
+				crust = "Deepdish";
 			else
-				startWholePizzaCreation();
+				crust = "Stuffed";
+			addEvent(size, crust, "pick");
+			startPizzaCreation();
 		}
 	}).show();
 		
 	}
 
-	protected void startHalfPizzaCreation() {
-		Intent intent = new Intent(OrderPage.this, LeftHalfPizza.class);
-		startActivity(intent);
-	}
-
-	protected void startWholePizzaCreation() {
-		Intent intent = new Intent(OrderPage.this, NewWholePizza.class);
+	protected void startPizzaCreation() {
+		Intent intent = new Intent(OrderPage.this, NewPizza.class);
 		startActivity(intent);
 	}
 	
@@ -150,31 +145,31 @@ public class OrderPage extends ListActivity implements OnClickListener{
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				
+				data.getWritableDatabase().delete(TABLE_NAME, null, null);
+				finish();
 			}
 		}).show();
 	}
 	
-	private void addEvent(String size, String crust, int layout, String toppings) {
+	private void addEvent(String size, String crust, String toppings) {
 		SQLiteDatabase db = data.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(SIZE, size);
 		values.put(CRUST, crust);
-		values.put(LAYOUT, layout);
 		values.put(TOPPINGS, toppings);
 		db.insertOrThrow(TABLE_NAME, null, values);
 	}
 	
-	private static String[] FROM = { _ID, SIZE, CRUST, LAYOUT, TOPPINGS };
+	private static String[] FROM = {SIZE, CRUST, TOPPINGS};
 	private static String ORDER_BY = SIZE + " DESC";
 	private Cursor getEvents() {
 		SQLiteDatabase db = data.getReadableDatabase();
-		Cursor cursor = db.query(TABLE_NAME, FROM, null, null, null, null, ORDER_BY);
+		Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, ORDER_BY);
 		startManagingCursor(cursor);
 		return cursor;
 	}
 	
-	private static int[] TO = { R.id.time, R.id.title, };
+	private static int[] TO = { R.id.size, R.id.crust, R.id.toppings };
 	private void showEvents(Cursor cursor) {
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.item, cursor, FROM, TO);
 		setListAdapter(adapter);

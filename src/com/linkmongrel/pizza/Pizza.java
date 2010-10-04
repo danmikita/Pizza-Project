@@ -24,9 +24,6 @@ public class Pizza extends Activity implements OnClickListener{
         getStartedButton.setOnClickListener(this);
         
         name = (EditText)findViewById(R.id.get_name);
-//        name.setHint("Enter your name");
-//        name.setGravity(1);
-        
     }
 
 	@Override
@@ -46,8 +43,9 @@ public class Pizza extends Activity implements OnClickListener{
 				}
 			}).show();
 			} else {
-			Intent i = new Intent(this, OrderPage.class);
-			startActivity(i);
+				name.setText("");
+				Intent i = new Intent(this, OrderPage.class);
+				startActivity(i);
 			}
 			break;
 		// More buttons go here (if any) ...

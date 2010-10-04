@@ -13,12 +13,21 @@ public class ImageAdapter extends BaseAdapter {
     private Context mContext;
 
     private Integer[] mImageIds = {
-            R.drawable.pepperoni2,
-            R.drawable.peppers2,
-            R.drawable.onion2,
-            R.drawable.mushrooms2,
-            R.drawable.sausage2,
+            R.drawable.anchovies,
+            R.drawable.bacon,
+            R.drawable.bananapepper,
+            R.drawable.blackolives,
+            R.drawable.chicken,
+            R.drawable.greenpeppers,
+            R.drawable.ham,
+            R.drawable.jalapenopeppers,
             R.drawable.mozzarella,
+            R.drawable.mushrooms,
+            R.drawable.onion,
+            R.drawable.pepperoni,
+            R.drawable.pineapple,
+            R.drawable.sausage,
+            R.drawable.tomatoes,
     };
 
     public ImageAdapter(Context c) {

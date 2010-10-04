@@ -14,14 +14,8 @@
         <activity android:name=".OrderPage"
         	android:label="@string/order_title" >
         </activity>
-        <activity android:name=".NewWholePizza"
+        <activity android:name=".NewPizza"
         	android:label="@string/new_whole_pizza_title" >
-        </activity>
-        <activity android:name=".RightHalfPizza"
-        	android:label="@string/right_label" >
-        </activity>
-        <activity android:name=".LeftHalfPizza"
-        	android:label="@string/left_label" >
         </activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
