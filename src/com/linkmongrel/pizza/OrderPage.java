@@ -12,8 +12,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class OrderPage extends ListActivity implements OnClickListener{
@@ -24,6 +28,8 @@ public class OrderPage extends ListActivity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.order_page);
+		getListView().setChoiceMode(1);
+//		getListView().setOnItemClickListener();
 		data = new PizzaData(this);
 		try{
 			Cursor cursor = getEvents();
@@ -31,6 +37,9 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		} finally {
 			data.close();
 		}
+		
+//		ListView list = (ListView) findViewById(R.id.list);
+//		list.setChoiceMode(1);
 		// Set up click listeners for all the buttons
         View getNewPizzaButton = findViewById(R.id.new_pizza_button);
         getNewPizzaButton.setOnClickListener(this);
@@ -132,7 +141,11 @@ public class OrderPage extends ListActivity implements OnClickListener{
 	}
 
 	protected void startPizzaCreation() {
+		Bundle bundle = new Bundle();
+		bundle.putLong("ID", 1);
+		
 		Intent intent = new Intent(OrderPage.this, NewPizza.class);
+		intent.putExtras(bundle);
 		startActivity(intent);
 	}
 	
@@ -174,6 +187,45 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.item, cursor, FROM, TO);
 		setListAdapter(adapter);
 		}
-		
 	
+	private void editPizza() {
+		Bundle bundle = new Bundle();
+		bundle.putLong("ID", 1);
+
+		Intent intent = new Intent(OrderPage.this, NewPizza.class);
+		intent.putExtras(bundle);
+		startActivity(intent);
+	}
+		
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.settings:
+//			startActivity(new Intent(this, Prefs.class));
+			return true;
+		case R.id.help:
+			new AlertDialog.Builder(this)
+			.setTitle(R.string.help_title)
+			.setMessage(R.string.enter_name_text).setCancelable(false)
+			.setNeutralButton("OK", 
+			new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		}).show();
+			return true;
+		}
+		return false;
+	}
+
 }

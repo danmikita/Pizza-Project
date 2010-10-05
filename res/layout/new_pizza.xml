@@ -5,6 +5,12 @@
 	android:orientation="vertical"
 	android:background="@color/background"
 	xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView
+		android:id="@+id/slide_text"
+		android:text="Slide to select ingredients"
+		android:layout_width="wrap_content"
+		android:gravity="center"
+		android:layout_height="wrap_content" />
 	<Gallery
 		android:id="@+id/gallery"
 		android:layout_width="fill_parent"
@@ -13,7 +19,7 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:layout_marginTop="20dip"
+		android:layout_marginTop="15dip"
 		android:id="@+id/radiogroup">
 		<RadioButton
 			android:checked="true"

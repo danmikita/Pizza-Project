@@ -7,9 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -32,6 +37,7 @@ public class NewPizza extends Activity implements OnClickListener {
 	private List<String> rightList = new ArrayList<String>();
 	private List<String> toppingsList = new ArrayList<String>();
 	private PizzaData data;
+	Long id;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,9 @@ public class NewPizza extends Activity implements OnClickListener {
 		data = new PizzaData(this);
 		createToppingList();
 
+		Bundle bundle = this.getIntent().getExtras();
+		id = bundle.getLong("ID", 0);
+		
 		wholeRadio = (RadioButton) findViewById(R.id.whole);
 		leftRadio = (RadioButton) findViewById(R.id.left);
 		wholeText = (TextView) findViewById(R.id.whole_text);
@@ -163,7 +172,8 @@ public class NewPizza extends Activity implements OnClickListener {
 		for (String item : list) {
 			toppings += item + ", ";
 		}
-		return toppings;
+		String withOutComma = toppings.substring(0, toppings.length() - 2);
+		return withOutComma;
 	}
 	
 	private void updatePizza(String toppings) {
@@ -172,5 +182,37 @@ public class NewPizza extends Activity implements OnClickListener {
 		values.put(TOPPINGS, toppings);
 		db.update(TABLE_NAME, values, TOPPINGS + "='pick'", null);
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.settings:
+//			startActivity(new Intent(this, Prefs.class));
+			return true;
+		case R.id.help:
+			new AlertDialog.Builder(this)
+			.setTitle(R.string.help_title)
+			.setMessage(R.string.enter_name_text).setCancelable(false)
+			.setNeutralButton("OK", 
+			new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		}).show();
+			return true;
+		}
+		return false;
+	}
+
 
 }

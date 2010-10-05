@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:id="@+id/settings"
+		android:title="@string/settings_label"
+		android:alphabeticShortcut="@string/settings_shortcut" />
+	<item
+		android:id="@+id/help"
+		android:title="@string/help_label"
+		android:alphabeticShortcut="@string/help_shortcut" />
+</menu>

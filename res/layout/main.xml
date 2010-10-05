@@ -11,23 +11,23 @@
     	android:layout_height="wrap_content"
     	android:layout_width="fill_parent"
     	android:layout_gravity="bottom" >
-		<TextView  
-    		android:text="@string/main_title" 
+		<ImageView  
+    		android:src="@drawable/pizza_palor_orange" 
    			android:layout_width="wrap_content" 
     		android:layout_height="wrap_content"
     		android:layout_gravity="center"
-    		android:layout_marginBottom="100dip"
-    		android:textSize="24.5sp" />
+    		android:layout_marginBottom="10dip" />
     	<EditText
 			android:id="@+id/get_name"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:layout_marginBottom="50dip"
+			android:layout_marginBottom="20dip"
 			android:layout_marginRight="50dip"
 			android:layout_marginLeft="50dip"
+			android:selectAllOnFocus="true"
 			android:hint="Enter your name"
-			android:gravity="center"
+			android:inputType="textPersonName"
 			android:textSize="18sp" />
     	<Button
     		android:id="@+id/get_started_button"
