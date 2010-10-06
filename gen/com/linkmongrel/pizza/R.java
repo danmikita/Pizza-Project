@@ -73,6 +73,7 @@ public final class R {
         public static final int menu=0x7f070000;
     }
     public static final class string {
+        public static final int add_ingredients_help=0x7f06002d;
         public static final int add_to_cart_label=0x7f06001e;
         public static final int app_name=0x7f060001;
         public static final int checkout_label=0x7f060006;
@@ -80,6 +81,7 @@ public final class R {
         public static final int checkout_title=0x7f060026;
         public static final int crust_selection=0x7f060010;
         public static final int deepdish_label=0x7f060013;
+        public static final int edit_order_help=0x7f06002e;
         public static final int edit_order_label=0x7f060005;
         public static final int enter_name_text=0x7f06001f;
         public static final int extra_cheese_checkbox=0x7f06001c;

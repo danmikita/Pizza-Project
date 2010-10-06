@@ -200,7 +200,7 @@ public class NewPizza extends Activity implements OnClickListener {
 		case R.id.help:
 			new AlertDialog.Builder(this)
 			.setTitle(R.string.help_title)
-			.setMessage(R.string.enter_name_text).setCancelable(false)
+			.setMessage(R.string.add_ingredients_help).setCancelable(false)
 			.setNeutralButton("OK", 
 			new DialogInterface.OnClickListener() {
 			

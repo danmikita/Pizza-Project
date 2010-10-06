@@ -214,7 +214,7 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		case R.id.help:
 			new AlertDialog.Builder(this)
 			.setTitle(R.string.help_title)
-			.setMessage(R.string.enter_name_text).setCancelable(false)
+			.setMessage(R.string.edit_order_help).setCancelable(false)
 			.setNeutralButton("OK", 
 			new DialogInterface.OnClickListener() {
 			
