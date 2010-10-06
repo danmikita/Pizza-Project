@@ -1,7 +1,9 @@
 package com.linkmongrel.pizza;
 
 import static com.linkmongrel.pizza.Constants.TABLE_NAME;
-import static com.linkmongrel.pizza.Constants.TOPPINGS;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_WHOLE;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_LEFT;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_RIGHT;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,17 +132,19 @@ public class NewPizza extends Activity implements OnClickListener {
 	}
 
 	private void addToCart() {
-		String toppings = "";
+		String toppingsWhole = "";
+		String toppingsLeft = "";
+		String toppingsRight = "";
 		if(wholeList.size() > 0) {
-			toppings = toppings + "Whole Pizza: " + editString(wholeList);
+			toppingsWhole = toppingsWhole + editString(wholeList);
 		}
 		if(leftList.size() > 0) {
-			toppings = toppings + "Left Half: " + editString(leftList);
+			toppingsLeft = toppingsLeft + editString(leftList);
 		}
 		if(rightList.size() > 0) {
-			toppings = toppings + "Right Half: " + editString(rightList);
+			toppingsRight = toppingsRight + editString(rightList);
 		}
-		updatePizza(toppings);
+		updatePizza(toppingsWhole, toppingsLeft, toppingsRight);
 	}
 
 	private void createToppingList() {
@@ -176,11 +180,13 @@ public class NewPizza extends Activity implements OnClickListener {
 		return withOutComma;
 	}
 	
-	private void updatePizza(String toppings) {
+	private void updatePizza(String toppingsWhole, String toppingsLeft, String toppingsRight) {
 		SQLiteDatabase db = data.getWritableDatabase();
 		ContentValues values = new ContentValues();
-		values.put(TOPPINGS, toppings);
-		db.update(TABLE_NAME, values, TOPPINGS + "='pick'", null);
+		values.put(TOPPINGS_WHOLE, toppingsWhole);
+		values.put(TOPPINGS_LEFT, toppingsLeft);
+		values.put(TOPPINGS_RIGHT, toppingsRight);
+		db.update(TABLE_NAME, values, TOPPINGS_WHOLE + "='none'", null);
 	}
 	
 	@Override

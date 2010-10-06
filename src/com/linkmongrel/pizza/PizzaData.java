@@ -7,13 +7,15 @@ import static android.provider.BaseColumns._ID;
 import static com.linkmongrel.pizza.Constants.TABLE_NAME;
 import static com.linkmongrel.pizza.Constants.SIZE;
 import static com.linkmongrel.pizza.Constants.CRUST;
-import static com.linkmongrel.pizza.Constants.TOPPINGS;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_WHOLE;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_LEFT;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_RIGHT;
 
 
 
 public class PizzaData extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "pizza.db";
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 4;
 	
 	public PizzaData(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,7 +25,8 @@ public class PizzaData extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE " + TABLE_NAME + " (" + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + SIZE
-				+ " TEXT NOT NULL, " + CRUST + " TEXT NOT NULL, " +  TOPPINGS + " TEXT NOT NULL);");
+				+ " TEXT NOT NULL, " + CRUST + " TEXT NOT NULL, " + TOPPINGS_WHOLE + " TEXT, " + TOPPINGS_LEFT + 
+				" TEXT, " +  TOPPINGS_RIGHT + " TEXT);");
 	}
 
 	@Override

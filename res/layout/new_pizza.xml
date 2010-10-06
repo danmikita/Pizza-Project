@@ -5,12 +5,6 @@
 	android:orientation="vertical"
 	android:background="@color/background"
 	xmlns:android="http://schemas.android.com/apk/res/android">
-	<TextView
-		android:id="@+id/slide_text"
-		android:text="Slide to select ingredients"
-		android:layout_width="wrap_content"
-		android:gravity="center"
-		android:layout_height="wrap_content" />
 	<Gallery
 		android:id="@+id/gallery"
 		android:layout_width="fill_parent"
@@ -19,42 +13,48 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:layout_marginTop="15dip"
+		android:paddingTop="5dip"
 		android:id="@+id/radiogroup">
 		<RadioButton
 			android:checked="true"
 			android:id="@+id/whole"
+			android:textColor="#000000"
 			android:text="Whole" />
 		<TextView
 			android:id="@+id/whole_text"
+			android:textColor="#000000"
 			android:layout_width="wrap_content"
 			android:minLines="2"
 			android:layout_height="wrap_content" />
 		<RadioButton
 			android:checked="false"
 			android:id="@+id/left"
+			android:textColor="#000000"
 			android:text="Left Half" />
 		<TextView
 			android:id="@+id/left_text"
 			android:layout_width="wrap_content"
 			android:minLines="2"
+			android:textColor="#000000"
 			android:layout_height="wrap_content" />
 		<RadioButton
 			android:checked="false"
+			android:textColor="#000000"
 			android:id="@+id/right"
 			android:text="Right Half" />
 		<TextView
 			android:id="@+id/right_text"
 			android:layout_width="wrap_content"
 			android:minLines="2"
+			android:textColor="#000000"
 			android:layout_height="wrap_content" />
 	</RadioGroup>
 	<Button
 		android:id="@+id/add_to_cart_button"
-		android:layout_width="fill_parent"
+		android:layout_gravity="center"
+		android:layout_width="130dip"
 		android:layout_height="wrap_content"
-		android:layout_marginRight="30dip"
-		android:layout_marginLeft="30dip"
+		android:drawableTop="@drawable/shopping"
 		android:text="@string/add_to_cart_label" />
 </LinearLayout>
 

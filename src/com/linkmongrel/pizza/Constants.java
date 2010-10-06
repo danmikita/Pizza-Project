@@ -8,5 +8,7 @@ public interface Constants extends BaseColumns {
 	// Columns in the Events database
 	public static final String SIZE = "size";
 	public static final String CRUST = "crust";
-	public static final String TOPPINGS = "toppings";
+	public static final String TOPPINGS_WHOLE = "toppingsWhole";
+	public static final String TOPPINGS_LEFT = "toppingsLeft";
+	public static final String TOPPINGS_RIGHT = "toppingsRight";
 }

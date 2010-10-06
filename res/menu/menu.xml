@@ -9,4 +9,7 @@
 		android:id="@+id/help"
 		android:title="@string/help_label"
 		android:alphabeticShortcut="@string/help_shortcut" />
+	<item
+		android:id="@+id/exit"
+		android:title="@string/exit" />
 </menu>

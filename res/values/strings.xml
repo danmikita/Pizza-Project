@@ -8,7 +8,7 @@
 <string name="edit_order_label">Edit Order</string>
 <string name="checkout_label">Checkout</string>
 <string name="order_title">Order Summary</string>
-<string name="new_whole_pizza_title">Select your toppings</string>
+<string name="new_whole_pizza_title">Slide to select your toppings</string>
 <string name="how_to_title">How To Order</string>
 <string name="how_to_text">Following this message you will be given the option of your pizza
  size, crust, and toppings.  If at any time you need help, press the menu button and select help, 
@@ -47,6 +47,16 @@
 <string name="help_label">Help</string>
 <string name="help_title">Help</string>
 <string name="help_shortcut">h</string>
-<string name="add_ingredients_help">To add ingredients to the pizza, slide the pictures at the top of the screen until the topping desired is shown.  Choose which side of the pizza, left, right or whole,  you would like the topping on, and click the picture. "Whole"  adds the topping to the entire pizza, while "Left" and "Right" only put the topping on that side.  To remove the item, simply click the picture again. Once all the items have been selected, select "Add to Cart".</string>
-<string name="edit_order_help">To add a new pizza to your order, select "Add New Pizza" and follow the instructions that follow.To edit a pizza in your order, select which pizza you would like to edit.  Once selected, click on "Edit Pizza" to edit the selected pizza. Once you have completed your order, select "Checkout" to know the total and what time to pick up the order.</string>
+<string name="add_ingredients_help">To add ingredients to the pizza, slide the pictures at 
+the top of the screen until the topping desired is shown.  Choose which side of the pizza, 
+left, right or whole,  you would like the topping on, and click the picture. "Whole"  adds 
+the topping to the entire pizza, while "Left" and "Right" only put the topping on that side.  
+To remove the item, simply click the picture again. Once all the items have been selected, select "Add to Cart".</string>
+<string name="edit_order_help">To add a new pizza to your order, select "Add New Pizza" and 
+follow the instructions that follow. To edit a pizza in your order, select which pizza you 
+would like to edit.  Once selected, click on "Edit Pizza" to edit the selected pizza. Once 
+you have completed your order, select "Checkout" to know the total and what time to pick up the order.</string>
+<string name="empty">Your shopping cart is currently empty</string>
+<string name="total">Current Total: $0.00</string>
+<string name="exit">Exit</string>
 </resources>

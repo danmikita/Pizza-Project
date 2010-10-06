@@ -2,8 +2,10 @@ package com.linkmongrel.pizza;
 
 import static com.linkmongrel.pizza.Constants.CRUST;
 import static com.linkmongrel.pizza.Constants.SIZE;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_WHOLE;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_LEFT;
+import static com.linkmongrel.pizza.Constants.TOPPINGS_RIGHT;
 import static com.linkmongrel.pizza.Constants.TABLE_NAME;
-import static com.linkmongrel.pizza.Constants.TOPPINGS;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentValues;
@@ -17,12 +19,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class OrderPage extends ListActivity implements OnClickListener{
 	private PizzaData data;
 	private boolean hasShown = false;
+	private TextView totalText;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +41,14 @@ public class OrderPage extends ListActivity implements OnClickListener{
 			data.close();
 		}
 		
-//		ListView list = (ListView) findViewById(R.id.list);
-//		list.setChoiceMode(1);
 		// Set up click listeners for all the buttons
         View getNewPizzaButton = findViewById(R.id.new_pizza_button);
         getNewPizzaButton.setOnClickListener(this);
-        View getEditOrderButton = findViewById(R.id.edit_order_button);
-        getEditOrderButton.setOnClickListener(this);
+//        View getEditOrderButton = findViewById(R.id.edit_order_button);
+//        getEditOrderButton.setOnClickListener(this);
         View getCheckoutButton = findViewById(R.id.checkout_button);
         getCheckoutButton.setOnClickListener(this);
+        totalText = (TextView) findViewById(R.id.total);
 	}
 	
 	@Override
@@ -58,6 +60,10 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		} finally {
 			data.close();
 		}
+		if(getListView().getCount() == 0)
+			totalText.setText("Current Total: $0.00");
+		else
+			totalText.setText("Current Total: $" + (getListView().getCount() * 9.99));
 	}
 	
 	@Override
@@ -71,10 +77,11 @@ public class OrderPage extends ListActivity implements OnClickListener{
 				openSizeSelectionDialog();
 			}
 			break;
-		case R.id.edit_order_button:
-			break;
+//		case R.id.edit_order_button:
+//			break;
 		case R.id.checkout_button:
-			checkOutDialog();
+			if(getListView().getCount() != 0)
+				checkOutDialog();
 			break;
 		// More buttons go here (if any) ...
 		}
@@ -133,7 +140,7 @@ public class OrderPage extends ListActivity implements OnClickListener{
 				crust = "Deepdish";
 			else
 				crust = "Stuffed";
-			addEvent(size, crust, "pick");
+			addEvent(size, crust, "none", "none", "none");
 			startPizzaCreation();
 		}
 	}).show();
@@ -164,16 +171,18 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		}).show();
 	}
 	
-	private void addEvent(String size, String crust, String toppings) {
+	private void addEvent(String size, String crust, String toppingsWhole, String toppingsLeft, String toppingsRight) {
 		SQLiteDatabase db = data.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(SIZE, size);
 		values.put(CRUST, crust);
-		values.put(TOPPINGS, toppings);
+		values.put(TOPPINGS_WHOLE, toppingsWhole);
+		values.put(TOPPINGS_LEFT, toppingsLeft);
+		values.put(TOPPINGS_RIGHT, toppingsRight);
 		db.insertOrThrow(TABLE_NAME, null, values);
 	}
 	
-	private static String[] FROM = {SIZE, CRUST, TOPPINGS};
+	private static String[] FROM = {SIZE, CRUST, TOPPINGS_WHOLE, TOPPINGS_LEFT, TOPPINGS_RIGHT};
 	private static String ORDER_BY = SIZE + " DESC";
 	private Cursor getEvents() {
 		SQLiteDatabase db = data.getReadableDatabase();
@@ -182,9 +191,9 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		return cursor;
 	}
 	
-	private static int[] TO = { R.id.size, R.id.crust, R.id.toppings };
+	private static int[] TO = { R.id.email_url, R.id.comment, R.id.wholePizzaHeader, R.id.leftHalfOnly, R.id.rightHalfOnly };
 	private void showEvents(Cursor cursor) {
-		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.item, cursor, FROM, TO);
+		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.listview, cursor, FROM, TO);
 		setListAdapter(adapter);
 		}
 	
