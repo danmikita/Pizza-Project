@@ -57,7 +57,7 @@
 	</RadioGroup>
 	<Button
 		android:id="@+id/add_to_cart_button"
-		android:layout_gravity="bottom"
+		android:layout_gravity="center"
 		android:layout_width="130dip"
 		android:layout_height="wrap_content"
 		android:drawableTop="@drawable/shopping"

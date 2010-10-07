@@ -32,6 +32,7 @@ public class OrderPage extends ListActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.order_page);
 		getListView().setChoiceMode(1);
+		
 //		getListView().setOnItemClickListener();
 		data = new PizzaData(this);
 		try{
@@ -142,7 +143,6 @@ public class OrderPage extends ListActivity implements OnClickListener{
 			startPizzaCreation();
 		}
 	}).show();
-		
 	}
 
 	protected void startPizzaCreation() {

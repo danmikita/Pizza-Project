@@ -3,7 +3,7 @@
 <string name="hello">Hello World, Pizza!</string>
 <string name="app_name">Pizza Parlor</string>
 <string name="main_title">Pizza</string>
-<string name="get_started_label">Get Started!</string>
+<string name="get_started_label">Place an Order!</string>
 <string name="new_pizza_label">Add New Pizza</string>
 <string name="edit_order_label">Edit Order</string>
 <string name="checkout_label">Checkout</string>

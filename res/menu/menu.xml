@@ -13,5 +13,6 @@
 		android:alphabeticShortcut="@string/help_shortcut" />
 	<item
 		android:id="@+id/exit"
+		android:icon="@drawable/exit"
 		android:title="@string/exit" />
 </menu>
