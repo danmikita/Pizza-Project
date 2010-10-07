@@ -77,8 +77,6 @@ public class OrderPage extends ListActivity implements OnClickListener{
 				openSizeSelectionDialog();
 			}
 			break;
-//		case R.id.edit_order_button:
-//			break;
 		case R.id.checkout_button:
 			if(getListView().getCount() != 0)
 				checkOutDialog();
