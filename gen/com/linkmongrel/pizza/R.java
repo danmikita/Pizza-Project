@@ -25,18 +25,20 @@ public final class R {
         public static final int bananapepper=0x7f020003;
         public static final int blackolives=0x7f020004;
         public static final int chicken=0x7f020005;
-        public static final int greenpeppers=0x7f020006;
-        public static final int ham=0x7f020007;
-        public static final int icon=0x7f020008;
-        public static final int jalapenopeppers=0x7f020009;
-        public static final int mozzarella=0x7f02000a;
-        public static final int mushrooms=0x7f02000b;
-        public static final int onion=0x7f02000c;
-        public static final int pepperoni=0x7f02000d;
-        public static final int pineapple=0x7f02000e;
-        public static final int pizza_palor_orange=0x7f02000f;
-        public static final int sausage=0x7f020010;
-        public static final int tomatoes=0x7f020011;
+        public static final int equalizer=0x7f020006;
+        public static final int greenpeppers=0x7f020007;
+        public static final int ham=0x7f020008;
+        public static final int icon=0x7f020009;
+        public static final int jalapenopeppers=0x7f02000a;
+        public static final int mozzarella=0x7f02000b;
+        public static final int mushrooms=0x7f02000c;
+        public static final int onion=0x7f02000d;
+        public static final int pepperoni=0x7f02000e;
+        public static final int pineapple=0x7f02000f;
+        public static final int pizza_palor_orange=0x7f020010;
+        public static final int question=0x7f020011;
+        public static final int sausage=0x7f020012;
+        public static final int tomatoes=0x7f020013;
     }
     public static final class id {
         public static final int add_to_cart_button=0x7f080010;
