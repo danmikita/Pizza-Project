@@ -21,64 +21,64 @@ public final class R {
     public static final class drawable {
         public static final int anchovies=0x7f020000;
         public static final int avatar=0x7f020001;
-        public static final int background=0x7f020002;
-        public static final int bacon=0x7f020003;
-        public static final int bananapepper=0x7f020004;
-        public static final int blackolives=0x7f020005;
-        public static final int chicken=0x7f020006;
-        public static final int equalizer=0x7f020007;
-        public static final int exit=0x7f020008;
-        public static final int greenpeppers=0x7f020009;
-        public static final int ham=0x7f02000a;
-        public static final int happy=0x7f02000b;
-        public static final int icon=0x7f02000c;
-        public static final int jalapenopeppers=0x7f02000d;
-        public static final int logo=0x7f02000e;
-        public static final int more=0x7f02000f;
-        public static final int mozzarella=0x7f020010;
-        public static final int mushrooms=0x7f020011;
-        public static final int onion=0x7f020012;
-        public static final int pepperoni=0x7f020013;
-        public static final int pineapple=0x7f020014;
-        public static final int pizza_palor_orange=0x7f020015;
-        public static final int question=0x7f020016;
-        public static final int sausage=0x7f020017;
-        public static final int shopping=0x7f020018;
+        public static final int bacon=0x7f020002;
+        public static final int bananapepper=0x7f020003;
+        public static final int blackolives=0x7f020004;
+        public static final int chicken=0x7f020005;
+        public static final int equalizer=0x7f020006;
+        public static final int exit=0x7f020007;
+        public static final int greenpeppers=0x7f020008;
+        public static final int ham=0x7f020009;
+        public static final int happy=0x7f02000a;
+        public static final int icon=0x7f02000b;
+        public static final int jalapenopeppers=0x7f02000c;
+        public static final int logo=0x7f02000d;
+        public static final int more=0x7f02000e;
+        public static final int mozzarella=0x7f02000f;
+        public static final int mushrooms=0x7f020010;
+        public static final int onion=0x7f020011;
+        public static final int pepperoni=0x7f020012;
+        public static final int pineapple=0x7f020013;
+        public static final int pizza_palor_orange=0x7f020014;
+        public static final int question=0x7f020015;
+        public static final int sausage=0x7f020016;
+        public static final int shopping=0x7f020017;
+        public static final int stop=0x7f020018;
         public static final int tomatoes=0x7f020019;
     }
     public static final class id {
         public static final int add_to_cart_button=0x7f080011;
-        public static final int checkout_button=0x7f080014;
+        public static final int cancel_button=0x7f080012;
+        public static final int checkout_button=0x7f080015;
         public static final int comment=0x7f080003;
         public static final int email_url=0x7f080001;
-        public static final int exit=0x7f080017;
+        public static final int exit=0x7f080018;
         public static final int gallery=0x7f080009;
         public static final int get_name=0x7f080007;
         public static final int get_started_button=0x7f080008;
-        public static final int help=0x7f080016;
+        public static final int help=0x7f080017;
         public static final int left=0x7f08000d;
         public static final int leftHalfOnly=0x7f080005;
         public static final int left_text=0x7f08000e;
         public static final int name=0x7f080000;
-        public static final int new_pizza_button=0x7f080013;
+        public static final int new_pizza_button=0x7f080014;
         public static final int postTitle=0x7f080002;
         public static final int radiogroup=0x7f08000a;
         public static final int right=0x7f08000f;
         public static final int rightHalfOnly=0x7f080006;
         public static final int right_text=0x7f080010;
-        public static final int settings=0x7f080015;
-        public static final int total=0x7f080012;
+        public static final int settings=0x7f080016;
+        public static final int total=0x7f080013;
         public static final int whole=0x7f08000b;
         public static final int wholePizzaHeader=0x7f080004;
         public static final int whole_text=0x7f08000c;
     }
     public static final class layout {
-        public static final int button_list=0x7f030000;
-        public static final int listview=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int new_pizza=0x7f030003;
-        public static final int order_page=0x7f030004;
-        public static final int pizza_design=0x7f030005;
+        public static final int listview=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int new_pizza=0x7f030002;
+        public static final int order_page=0x7f030003;
+        public static final int pizza_design=0x7f030004;
     }
     public static final class menu {
         public static final int menu=0x7f070000;
@@ -87,6 +87,7 @@ public final class R {
         public static final int add_ingredients_help=0x7f06002d;
         public static final int add_to_cart_label=0x7f06001e;
         public static final int app_name=0x7f060001;
+        public static final int cancel_label=0x7f060033;
         public static final int checkout_label=0x7f060006;
         public static final int checkout_text=0x7f060025;
         public static final int checkout_title=0x7f060026;
@@ -94,9 +95,10 @@ public final class R {
         public static final int deepdish_label=0x7f060013;
         public static final int edit_order_help=0x7f06002e;
         public static final int edit_order_label=0x7f060005;
-        public static final int empty=0x7f06002f;
+        public static final int empty=0x7f060030;
+        public static final int enter_name_help=0x7f06002f;
         public static final int enter_name_text=0x7f06001f;
-        public static final int exit=0x7f060031;
+        public static final int exit=0x7f060032;
         public static final int extra_cheese_checkbox=0x7f06001c;
         public static final int get_started_label=0x7f060003;
         public static final int half_label=0x7f060016;
@@ -132,7 +134,7 @@ public final class R {
         public static final int stuffed_label=0x7f060014;
         public static final int thick_label=0x7f060012;
         public static final int thin_label=0x7f060011;
-        public static final int total=0x7f060030;
+        public static final int total=0x7f060031;
         public static final int whole_label=0x7f060017;
     }
     public static final class styleable {

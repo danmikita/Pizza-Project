@@ -84,7 +84,7 @@ public class Pizza extends Activity implements OnClickListener {
 			//			startActivity(new Intent(this, Prefs.class));
 			return true;
 		case R.id.help:
-			new AlertDialog.Builder(this).setTitle(R.string.help_title).setMessage(R.string.enter_name_text).setCancelable(false)
+			new AlertDialog.Builder(this).setTitle(R.string.help_title).setMessage(R.string.enter_name_help).setCancelable(false)
 					.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 
 						@Override

@@ -161,6 +161,8 @@ public class NewPizza extends Activity implements OnClickListener {
 
 		View getAddToCartButton = findViewById(R.id.add_to_cart_button);
 		getAddToCartButton.setOnClickListener(this);
+		View getCancelButton = findViewById(R.id.cancel_button);
+		getCancelButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -168,6 +170,13 @@ public class NewPizza extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.add_to_cart_button:
 			addToCart();
+			finish();
+			break;
+		case R.id.cancel_button:
+			if (id == 999)
+				data.getWritableDatabase().delete(TABLE_NAME, TOPPINGS_WHOLE + "='none'", null);
+			else
+				data.getWritableDatabase().delete(TABLE_NAME, _ID + "='" + id + "'", null);
 			finish();
 			break;
 		}
@@ -272,19 +281,19 @@ public class NewPizza extends Activity implements OnClickListener {
 			return true;
 		case R.id.exit:
 			new AlertDialog.Builder(this).setTitle(R.string.exit).setMessage("Are you sure you want to exit?").setCancelable(true)
-			.setNeutralButton("Yes", new DialogInterface.OnClickListener() {
+					.setNeutralButton("Yes", new DialogInterface.OnClickListener() {
 
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					System.exit(0);
-				}
-			}).setNegativeButton("No", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							System.exit(0);
+						}
+					}).setNegativeButton("No", new DialogInterface.OnClickListener() {
 
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					dialog.dismiss();
-				}
-			}).show();
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							dialog.dismiss();
+						}
+					}).show();
 			return true;
 		}
 		return false;
